@@ -1,0 +1,13 @@
+1. Do not push the snowballs into the corner otherwise it will be stuck and we will encounter an impossible state. If the snowball is against the wall then we encounter another impossible state unless the goal is on that same wall.
+  Otherwise we encounter another impossible state.
+
+2. The manhattan distance has flaws on its own because it does not account for the obstacles and the distance of the robot. So with the heur_alternate function
+  consider all impossible states (corners, obstacles, tunnels of obstacles, etc). Instead of using the Manhattan distance use the Euclidean distance as the range of the
+  search increases.
+
+3. When moving on the destination, if the snowball is a state A, then just find the snowball s and put it on top to get a faster solution
+  so time doesn't run out
+
+4. The weight in astar should be changed according the board size because if the board size is bigger, it requires more time to search through it
+
+5. If you have all three of the snowballs in a row/columns (ex. bsm) then try creating A on the goal state or at least pushing the snowball b to the destination so you do not have an infinite loop
